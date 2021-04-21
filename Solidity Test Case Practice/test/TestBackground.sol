@@ -7,5 +7,10 @@ import "../contracts/Background.sol";
 
 
 contract TestBackground {
-    
+
+    Background public background;
+
+    function beforeEach() public {
+        background = new Background();
+    }
 }
