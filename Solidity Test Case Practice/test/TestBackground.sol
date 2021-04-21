@@ -13,4 +13,11 @@ contract TestBackground {
     function beforeEach() public {
         background = new Background();
     }
+
+    function testStoreValue() public {
+        uint value = 5;
+        background.storeValue(value);
+        uint result = background.getValue(0);
+        assert.equal(result, value, "store correct value with storeValue function");
+    }
 }
