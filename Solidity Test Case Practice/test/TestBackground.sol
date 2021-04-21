@@ -27,4 +27,12 @@ contract TestBackground {
         uint numberOfValues = background.getNumberOfValues();
         assert.equal(numberOfValues, 1, "get correct length of values array");
     }
+
+    function testStoreTwoValues() public {
+        for (uint i = 0; i < 10; i++) {
+            background.storeValue(i);
+            uint result = background.getValue(i);
+            assert.equal(i, result, "store multiple values correct with storeValue function"); 
+        }    
+    }
 }
