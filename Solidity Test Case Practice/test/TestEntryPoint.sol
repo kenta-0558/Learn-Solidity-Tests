@@ -31,5 +31,19 @@ contract TestIntegrationEntryPoint {
         backgroundTest = new BackgroundTest();
         entryPoint = new EntryPoint(address(backgroundTest));    
     }
+
+}
+
+contract BackgroundTest is Background {
+
+    uint[] public values;
+
+    function storeValue(uint _value) public {
+        values.push(_value);
+    }
+
+    function getNumberOfValues() public view returns (uint) {
+        return 999;
+    }
 }
 
