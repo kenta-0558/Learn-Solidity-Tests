@@ -41,7 +41,11 @@ contract TestIntegrationEntryPoint {
         Assert.equal(value1, result1, "value 1 should be correct");
         Assert.equal(value2, result2, "value 2 should be correct");
     }
-
+    
+    function testGetNumberOfValues() public {
+        uint resultEntryPoint = entryPoint.getNumberOfValues();
+        Assert(resultEntryPoint, 33, "call correct getNumberOfValues");
+    }
 }
 
 contract BackgroundTest is Background {
@@ -53,7 +57,7 @@ contract BackgroundTest is Background {
     }
 
     function getNumberOfValues() public view returns (uint) {
-        return 999;
+        return 33;
     }
 }
 
