@@ -32,6 +32,16 @@ contract TestIntegrationEntryPoint {
         entryPoint = new EntryPoint(address(backgroundTest));    
     }
 
+    function testStoreValues() public {
+        uint value1 = 3;
+        uint value2 = 5;
+        entryPoint.storeTwoValues(1, 2);  
+        uint result1 = backgroundTest.getValue(0);
+        uint result2 = backgroundTest.getValue(1);
+        Assert.equal(value1, result1, "value 1 should be correct");
+        Assert.equal(value2, result2, "value 2 should be correct");
+    }
+
 }
 
 contract BackgroundTest is Background {
