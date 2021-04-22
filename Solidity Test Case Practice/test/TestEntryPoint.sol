@@ -22,8 +22,14 @@ contract TestEntryPoint {
     }
 }
 
-// contract TestIntegrationEntryPoint {
+contract TestIntegrationEntryPoint {
 
-//     BackgroundTest public backgroundTest;
-// }
+    BackgroundTest public backgroundTest;
+    EntryPoint public entryPoint;
+
+    function beforeEach() public {
+        backgroundTest = new BackgroundTest();
+        entryPoint = new EntryPoint(address(backgroundTest));    
+    }
+}
 
