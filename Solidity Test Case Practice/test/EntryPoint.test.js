@@ -1,0 +1,1 @@
+contract EntryPoint = artifacts.require("../contracts/EntryPoint.sol");
