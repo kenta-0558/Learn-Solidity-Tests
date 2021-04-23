@@ -1,3 +1,5 @@
+// source https://programmer.ink/think/solidity-test-case-practice.html but i had to modify some places by myself to fix bugs.
+
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >0.7.0 <0.9.0;
 
