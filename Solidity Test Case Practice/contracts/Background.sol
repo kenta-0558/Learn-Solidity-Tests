@@ -5,7 +5,7 @@ contract Background {
 
     uint[] private values;
 
-    function storeValue(uint _value) public {
+    function storeValue(uint _value) public virtual {
         values.push(_value);
     }
 

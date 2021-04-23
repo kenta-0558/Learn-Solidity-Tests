@@ -24,7 +24,7 @@ contract TestBackground {
     function testNumberOfValues() public {
         uint value = 33;
         background.storeValue(value);
-        uint numberOfValues = background.getNumberOfValues();
+        uint numberOfValues = background.getNumberOfValue();
         Assert.equal(numberOfValues, 1, "get correct length of values array");
     }
 
