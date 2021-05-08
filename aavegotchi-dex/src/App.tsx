@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import {Gotchi, QueryResponse } from './types';
 import { request } from 'graphql-request';
 import './App.css';
 
