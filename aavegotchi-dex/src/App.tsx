@@ -31,12 +31,13 @@ function App() {
     };
     console.log(gotchis);
     return (
-        <div> 
-            {gotchis.map(gotchi => (
-                <p key={gotchi.collateral}>
-                    {gotchi.name}
-                </p>
-            ))}   
+        <div className="App">
+            <div className="container">
+                <div className="selected-container">
+                </div>
+                <div className="gotchi-list">
+                </div>
+            </div>
         </div>
     );
 }
