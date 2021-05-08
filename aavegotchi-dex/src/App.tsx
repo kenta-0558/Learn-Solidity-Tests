@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Gotchi, QueryResponse } from './types';
 import { request } from 'graphql-request';
 import './App.css';
@@ -7,6 +7,8 @@ const uri = 'https://api.thegraph.com/subgraphs/name/aavegotchi/aavegotchi-core-
 
 
 function App() {
+
+    const [gotchis, setGotchis] = useState<Array<Gotchi>>([]);
 
     useEffect(() => {
         fetchGotchis();
@@ -24,14 +26,19 @@ function App() {
             }
         `;
 
-        const response = await request(uri, query);
-        console.log(response);
+        const response = await request<QueryResponse>(uri, query);
+        setGotchis(response.aavegotchis);
     };
-
+    console.log(gotchis);
     return (
-        <div>  
+        <div> 
+            {gotchis.map(gotchi => (
+                <p key={gotchi.collateral}>
+                    {gotchi.name}
+                </p>
+            ))}   
         </div>
     );
 }
 
-export default App;
+export default App; 
