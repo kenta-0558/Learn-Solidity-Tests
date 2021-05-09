@@ -11,6 +11,7 @@ const uri = 'https://api.thegraph.com/subgraphs/name/aavegotchi/aavegotchi-core-
 function App() {
 
     const [gotchis, setGotchis] = useState<Array<Gotchi>>([]);
+    const [selectedGotchi, setSelectedGotchi] = useState<number>(0);
 
     useEffect(() => {
         fetchGotchis();
@@ -38,14 +39,14 @@ function App() {
                 <div className="selected-container">
                 </div>
                 <div className="gotchi-list">
-                    {gotchis.map(gotchi => (
+                    {gotchis.map((gotchi, index) => (
                         <GotchiListing 
                             key={gotchi.name}
                             id={gotchi.id}
                             name={gotchi.name}
                             collateralColor="black"
-                            selectGotchi={() => null}
-                            selected={false}
+                            selectGotchi={() => setSelectedGotchi(index)}
+                            selected={index === selectedGotchi}
                         />
                     ))}
                 </div>
