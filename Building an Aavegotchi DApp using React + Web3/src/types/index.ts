@@ -2,7 +2,7 @@ export interface Gotchi {
     collateral: string;
     id: string;
     name: string;
-    withSetsNumericTrauts: Array<Number>;
+    withSetsNumericTraits: Array<Number>;
 }
 
 export interface QueryResponse {

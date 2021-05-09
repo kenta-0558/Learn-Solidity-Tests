@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { GotchiListing } from './components/GotchiListing';
+import { SelectedGotchi } from './components/SelectedGotchi';
 
 import { Gotchi, QueryResponse } from './types';
 import { request } from 'graphql-request';
@@ -32,11 +33,17 @@ function App() {
         const response = await request<QueryResponse>(uri, query);
         setGotchis(response.aavegotchis);
     };
-    console.log(gotchis);
+    
     return (
         <div className="App">
             <div className="container">
                 <div className="selected-container">
+                    {gotchis.length > 0 && 
+                        <SelectedGotchi 
+                            name={gotchis[selectedGotchi].name}
+                            traits={gotchis[selectedGotchi].withSetsNumericTraits}
+                        />
+                    }
                 </div>
                 <div className="gotchi-list">
                     {gotchis.map((gotchi, index) => (
