@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {Gotchi, QueryResponse } from './types';
+import { GotchiListing } from './components/GotchiListing';
+
+import { Gotchi, QueryResponse } from './types';
 import { request } from 'graphql-request';
 import './App.css';
 
@@ -36,6 +38,16 @@ function App() {
                 <div className="selected-container">
                 </div>
                 <div className="gotchi-list">
+                    {gotchis.map(gotchi => (
+                        <GotchiListing 
+                            key={gotchi.name}
+                            id={gotchi.id}
+                            name={gotchi.name}
+                            collateralColor="black"
+                            selectGotchi={() => null}
+                            selected={false}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
