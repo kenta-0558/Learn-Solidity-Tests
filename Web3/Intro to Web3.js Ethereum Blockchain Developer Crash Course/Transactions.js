@@ -1,4 +1,4 @@
-https://medium.com/moonbeam-network/using-the-ethereum-web3-library-to-send-transactions-in-moonbeam-5b8593767904
+// https://medium.com/moonbeam-network/using-the-ethereum-web3-library-to-send-transactions-in-moonbeam-5b8593767904
 const Web3 = require('web3');
 const web3 = new Web3('http://localhost:8545');
 
@@ -19,10 +19,14 @@ const deploy = async () => {
 
     const createTransaction = await web3.eth.accounts.signTransaction({
         to: addressTo,
-        value: web3.utils.toWei('100', 'ether'),
+        value: web3.utils.toWei('1', 'ether'),
         gas: ' 21000',
     }, "0xe87dc14a6990327560f1624b68b42b9a09719eaaa5f0f3cb6a2bb42e60324631")
-    .then(console.log);
+    
+    console.log(createTransaction);
+    const createReceipt = await web3.eth.sendSignedTransaction(createTransaction.rawTransaction);
+
+    console.log(`Transaction successful with hash: ${createReceipt.transactionHash}`);
 }
 
 deploy();
