@@ -5,5 +5,7 @@ const account = web3.eth.accounts.create();
 
 console.log(account);
 console.log(account.privateKey);
-const privateKeyBuffer = Buffer.from(account.privateKey, 'hex');
-console.log(privateKeyBuffer);
+// const privateKeyBuffer = Buffer.from(account.privateKey, 'hex');
+// console.log(privateKeyBuffer);
+
+
