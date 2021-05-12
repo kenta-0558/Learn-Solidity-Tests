@@ -30,8 +30,8 @@ var Tx = require('ethereumjs-tx');
 const Web3 = require('web3');
 const web3 = new Web3('http://127.0.0.1:7545');
 
-const account1 = '0xAe71f2290e814157f880c109DBD5019f57D21836';
-const account2 = '0xa26964414C73B3dB1d8D2141690EE07caB82e1F3';
+const account1 = '0xB65717185a8c70330f1Cfe9D18004147EFB77e13';
+const account2 = '0x4791e89831e28Bf106Fe880F11Ac47DBFA8DE2DC';
 // const newAccount1 = web3.eth.accounts.create();
 // const newAccount2 = web3.eth.accounts.create();
 
@@ -41,8 +41,8 @@ const account2 = '0xa26964414C73B3dB1d8D2141690EE07caB82e1F3';
 // const privateKey1 = newAccount1.privateKey;
 // const privateKey2 = newAccount2.privateKey;
 
-const privateKey1Buffer = new Buffer.from("649ffd227f4cd7f89fd15c0bc1da2f37f706b583be7ee316d9a9b5f9cf5a9203", 'hex');
-const privateKey2Buffer = new Buffer.from("3ac47156b74ba08b6a6d8ff09f385988fc83bda5c717ce40c930cff1ea8f5df7", 'hex');
+const privateKey1Buffer = Buffer.from("f63c6c989dd58fe6c6cbdeb47c0a27e3ad2a87b3bd0fe3d07ae4284f9be3cc7f", 'hex');
+const privateKey2Buffer = Buffer.from("f290141e9f89a7bcd31f595c1c6cdd4de456a7706bf57fb3162e991415416dc4", 'hex');
 
 console.log('Buffer 1: ', privateKey1Buffer);
 console.log('Buffer 2: ', privateKey2Buffer);
