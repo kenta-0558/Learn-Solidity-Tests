@@ -7,11 +7,19 @@ async function getBlockNumber() {
     return latestBlockNumber;
 }
 
+const getAccount = (accounts) => {
+    for (let i = 0; i < accounts.length; i++) {
+        console.log(accounts[i]);
+    }
+}
+
 async function getAccounts() {
     const accounts = await web3.eth.getAccounts();
     console.log(accounts);
+    getAccount(accounts);
 }
 
 getBlockNumber(); 
 
 getAccounts();
+
