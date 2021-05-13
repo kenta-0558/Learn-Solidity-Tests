@@ -7,6 +7,8 @@ let blockTime = 5000;
 const processBlock = async (blockNumber) => {
     console.log("We process block: " + blockNumber);
     latestKnownBlockNumber = blockNumber;
+    const block = await web3.eth.getBlock(blockNumber);
+    console.log("new block : ", block);
 } 
 
 const checkCurrentBlock = async () => {
@@ -19,3 +21,4 @@ const checkCurrentBlock = async () => {
 }
 
 checkCurrentBlock();
+
