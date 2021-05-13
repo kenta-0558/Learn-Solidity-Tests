@@ -15,6 +15,9 @@ const processBlock = async (blockNumber) => {
     for (const transactionHash of block.transactions) {
         let transaction = await web3.eth.getTransaction(transactionHash);
         console.log("Transaction: ", transaction);
+        let transactionReceipt = await web3.eth.getTransactionReceipt(transactionHash);
+        transaction = Object.assign(transaction, transactionReceipt);
+        console.log("Transaction with Receipt: ", transaction);
     }
 } 
 
