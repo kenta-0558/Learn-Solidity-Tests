@@ -12,5 +12,10 @@ contract EventTest {
         uint indexed date,
         string value
     );
+
+    function emitEvent(string calldata value) external {
+        emit MyEvent(nextId, block.timestamp(), value);
+        nextId++;
+    }
     
 }
