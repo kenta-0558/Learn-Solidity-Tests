@@ -6,7 +6,7 @@ contract Test {
     
     string name;
 
-    function changeName(string _newName) public {
+    function changeName(string memory _newName) public {
         name = _newName;
     }
 }
