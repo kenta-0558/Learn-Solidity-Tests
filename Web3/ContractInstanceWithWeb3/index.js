@@ -13,8 +13,15 @@ const init = async () => {
         deployedNetwork.address
     );
 
-    const name = await contract.methods.getFirstName().call();
-    console.log(name);
+    const firstName = await contract.methods.getFirstName().call();
+    console.log(firstName);
+
+    const addresses = await web3.eth.getAccounts();
+    await contract.methods.changeName("Ichina").send({
+        from: addresses[0],
+    });
+    const newFirstName = await contract.methods.getFirstName().call();
+    console.log(newFirstName);
 }
 
 init();
