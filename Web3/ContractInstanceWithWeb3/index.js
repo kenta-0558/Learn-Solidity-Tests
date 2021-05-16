@@ -13,7 +13,8 @@ const init = async () => {
         deployedNetwork.address
     );
 
-    console.log(contract);
+    const name = await contract.methods.getFirstName().call();
+    console.log(name);
 }
 
 init();
