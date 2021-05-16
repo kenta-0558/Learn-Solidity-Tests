@@ -19,7 +19,10 @@ const init = async () => {
     const addresses = await web3.eth.getAccounts();
     await contract.methods.changeName("Ichina").send({
         from: addresses[0],
-    });
+    })
+    .on('receipt', (receipt) => {
+        console.log(receipt);
+    })
     const newFirstName = await contract.methods.getFirstName().call();
     console.log(newFirstName);
 }
