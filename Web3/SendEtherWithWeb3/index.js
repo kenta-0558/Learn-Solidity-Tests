@@ -31,6 +31,14 @@ const init = async () => {
     });
 
     console.log(await contract.methods.functionCalled().call());
+
+    await web3.eth.sendTransaction({
+        from: addresses[0],
+        to: addresses[1],
+        value: '100000000'
+    });
+
+    console.log(await web3.eth.getBalance(addresses[1]));
 }
 
 init();
