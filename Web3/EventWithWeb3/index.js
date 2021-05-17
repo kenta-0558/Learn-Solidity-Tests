@@ -21,6 +21,17 @@ const init = async () => {
     });
 
     console.log(receipt.events);
+
+    await contract.methods.emitEvent('Ichina').send({
+        from: addresses[0]
+    });
+
+    const results = await contract.getPastEvents(
+        'MyEvent',
+        {fromBlock: 0}
+    );
+
+    console.log(results);
 }
 
 init();
