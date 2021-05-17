@@ -31,7 +31,16 @@ const init = async () => {
         {fromBlock: 0}
     );
 
-    console.log(results);
+    // console.log(results);
+    const results2  = await contract.getPastEvents(
+        'MyEvent',
+        {
+            filter: {
+                value: 'kiichi'
+            },
+            fromBlock: 0
+        }
+    );
 }
 
 init();

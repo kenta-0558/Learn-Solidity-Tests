@@ -7,7 +7,7 @@ contract Events {
     event MyEvent (
         uint indexed id,
         uint indexed date,
-        string value
+        string indexed value
     );
 
     uint nextId;
