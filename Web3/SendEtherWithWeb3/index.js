@@ -20,7 +20,15 @@ const init = async () => {
     await contract.methods.sendEther().send({
         from: addresses[0],
         value: '100000'
-    })
+    });
+
+    console.log(await contract.methods.functionCalled().call());
+
+    await web3.eth.sendTransaction({
+        from: addresses[0],
+        to: contract.options.address,
+        value: '100000'
+    });
 
     console.log(await contract.methods.functionCalled().call());
 }
