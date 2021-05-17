@@ -13,7 +13,14 @@ const init = async () => {
         deployedNetwork.address
     );
 
-    console.log(contract);
+    // console.log(contract);
+
+    const addresses = await web3.eth.getAccounts();
+    const receipt = await contract.methods.emitEvent('Kiichi').send({
+        from: addresses[0]
+    });
+
+    console.log(receipt.events);
 }
 
 init();
