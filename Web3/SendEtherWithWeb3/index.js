@@ -14,6 +14,15 @@ const init = async () => {
         MyContract.abi,
         deployedNetwork.address
     );
+
+    const addresses = await web3.eth.getAccounts();
+
+    await contract.methods.sendEther().send({
+        from: addresses[0],
+        value: '100000'
+    })
+
+    console.log(await contract.methods.functionCalled().call());
 }
 
 init();
