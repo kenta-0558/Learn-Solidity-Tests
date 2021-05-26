@@ -1,11 +1,11 @@
 import { expect } from 'chai';
-import { BigNumber } from 'ethers';
+import { BigNumber, Contract } from 'ethers';
 import { ethers } from 'hardhat';
 import { smockit, smoddit } from '@eth-optimism/smock';
 import { MyERC20, MyOtherContract } from '../typechain';
 
 describe("MyERC20 and other contract", () => {
-    let myERC20: any;
+    let myERC20: Contract;
 
     beforeEach(async () => {
         const MyERC20Factory = await ethers.getContractFactory("MyERC20");
