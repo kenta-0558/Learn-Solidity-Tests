@@ -7,8 +7,8 @@
 //   solidity: "0.7.3",
 // };
 import { HardhatUserConfig } from "hardhat/config";
-
-import 'tsconfig-paths/register';
+import "@nomiclabs/hardhat-ethers";
+// import 'tsconfig-paths/register';
 
 const config: HardhatUserConfig = {
   solidity: "0.7.3",  
