@@ -1,5 +1,10 @@
-const { ethers } = require('hardhat');
-const { expect } = require("chai");
+import { ethers } from 'hardhat';
+import { expect } from 'chai';
+import { genABI } from '../src/genABI';
+
+const TEST_ABI = genABI('Test');
+
+console.log(TEST_ABI);
 
 describe("Test contract", () => {
     it("Deployment", async () => {
