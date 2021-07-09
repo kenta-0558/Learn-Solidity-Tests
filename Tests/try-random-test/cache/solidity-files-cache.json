@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Learn Solidity Tests\\Tests\\try-random-test\\contracts\\Test.sol": {
-      "lastModificationDate": 1625849316147,
-      "contentHash": "e09af6030acad05306d4dd4e3dde7ed8",
+      "lastModificationDate": 1625857132417,
+      "contentHash": "70effe496e92c7845e2c36b2cfe5cd8c",
       "sourceName": "contracts/Test.sol",
       "solcConfig": {
         "version": "0.8.6",

@@ -39,6 +39,7 @@ describe("Test.sol", () => {
         it ("owner", async () => {
             expect(await factory.owner()).to.equal(wallet.address);
         })
+
     })
 
     describe ("setValue", () => {
@@ -50,6 +51,12 @@ describe("Test.sol", () => {
 
         it ("setValue fail", async () => {
             expect(factory.setValue(3)).to.be.revertedWith("value must be more than 5");
+        })
+
+        it ("emit valueChanged", async () => {
+            expect(factory.setValue(10))
+                 .to.emit(factory, 'valueChanged')
+                 .withArgs(7, 10);
         })
     })
     
